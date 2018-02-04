@@ -16,7 +16,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|primary_key: true|
+|id|integer|null: false, primary_key: true|
 |name|string||
 |body|text||
 
@@ -29,7 +29,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|primary_key: true|
+|id|integer|null: false, primary_key: true|
 |group_name|string||
 |body|text||
 
