@@ -1,79 +1,142 @@
-.container {
+.wrapper {
   height: 100%;
   color: white;
-  .header {
+
+  .create-message {
     background-color: #38AEF0;
     text-align: center;
   }
 
   .side-bar {
-    background-color: #253141;
     width: 300px;
     height: 100%;
     float: left;
-    &-up {
-      line-height: 96px;
-      vertical-align: middle;
-      font-weight: bold;
-      padding-left: 20px;
-    }
-    &-middle {
-      background-color: #2f3e51;
-      padding-left: 20px;
-      .latest-post-title {
-        padding: 20px 0 5px;
-        font-size: 15px;
+
+    .header {
+      background-color: #253141;
+      height: 100px;
+      line-height: 100px;
+      padding: 0 20px;
+      &__name {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
       }
-      .latest-post-content {
-        padding-bottom: 40px;
-        font-size: 11px;
+      &__lists {
+        display: inline-block;
+        float: right;
+        .list {
+          display: inline-block;
+          .icon {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .groups {
+      height: calc(100vh - 100px);
+      background-color: #2f3e51;
+      padding: 0 20px;
+      .group {
+        padding: 20px 0 40px;
+        &__name {
+          font-size: 15px;
+        }
+        &__message {
+          padding-top: 5px;
+          font-size: 11px;
+        }
       }
     }
   }
 
-  .content {
-    width: calc(100% - 300px);
+
+  .chat {
+    width: calc(100vw - 300px);
+    box-sizing: border-box;
     float: left;
-    &-upper {
-      width: 100%;
-      height: 96px;
+
+    .header {
+      box-sizing: border-box;
+      height: 100px;
+      padding: 0 40px;
       border-bottom: solid 1px #eeeeee;
-      &-groupName-groupMember-editButton {
-        margin: 0 40px;
-        .groupName-groupMember {
-          float: left;
-          .groupName {
-            color: #333333;
-            font-size: 20px;
-            padding-top: 35PX;
-            padding-bottom: 15px;
-          }
-          .groupMember {
-            color: #999999;
-            font-size: 12px;
+      .left-header {
+        float:left;
+        &__title {
+          color: #333;
+          font-size: 20px;
+          margin-top: 35px;
+        }
+        &__members {
+          font-size: 12px;
+          color: #999999;
+          margin-top: 15px;
+          .members {
+            display: inline-block;
+            padding-right: 5px;
           }
         }
-        .editButton {
-          float: right;
-          color: #38AEF0;
-          line-height: 20px;
-          vertical-align: middle;
-          padding: 28px 20px;
-        }
+      }
+      .right-header {
+        border: 1px solid #38AEF0;
+        color: #38AEF0;
+        float: right;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 28px;
+        padding: 0 20px;
       }
     }
 
-      &-middle {
-        
-      }
-      &-lower {
-
-        .new-post {
-
+    &-middle {
+      clear: both;
+      height: calc(100vh - 96px - 90px);
+      background-color: #e8ecf2;
+      padding: 0 40px;
+      .post {
+        padding-top: 46px;
+        .poster-name {
+          float: left;
+          color: #434A54;
+          font-size: 16px;
+          font-weight: bold;
         }
-
+        .time {
+          float: left;
+          margin-left: 10px;
+          font-size: 12px;
+          color: #999999;
+        }
+        .post-content {
+          clear: both;
+          padding-top: 10px;
+          padding-bottom: 40px;
+          color: #434A54;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+    }
+    &-lower {
+      background-color: #d6d7d8;
+      height: 90px;
+      & form {
+        padding: 0 40px;
+        & input {
+          height: 50px;
+          margin: 20px 0;
+          padding-left: 10px;
+        }
+        & submit {
+          background-color: #38AEF0;
+          height: 50px;
+          margin-left: 15px;
+        }
       }
 
+    }
   }
 
 }

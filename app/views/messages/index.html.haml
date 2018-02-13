@@ -1,21 +1,63 @@
-.container
-  .header チャットグループが作成されました。
+.wrapper
+
+  %p.create-message
+    チャットグループが作成されました。
+
   .side-bar
-    .side-bar-up never-stop
-    .side-bar-middle
-      .latest-post-title Politics
-      .latest-post-content persistent
-      .latest-post-title aaaaaaaa
-      .latest-post-content まだメッセージはありません
-      .latest-post-title Sampleグループ
-      .latest-post-content aaaaaaaaa
-  .content
-    .content-upper
-      .content-upper-groupName-groupMember-editButton
-        .groupName-groupMember
-          .groupName sampleグループ
-          .groupMember aoki,aoki,aoki
-        .editButton Edit
-    .content-middle
-    .content-lower
-      .new-post
+    .header
+      %h3.header__name
+        never-stop
+      %ul.header__lists
+        %li.list
+          %a{:href => '/'}
+            %i.fa.fa-edit.icon
+        %li.list
+          %a{:href => '/'}
+            %i.fa.fa-cog.icon
+    .groups
+      .group
+        .group__name
+          Politics
+        .group__message
+          persistent
+
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          Politics
+        %ul.left-header__members
+          Member :
+          %li.members
+            never_stop
+      .right-header
+        %a.right-header__button
+          Edit
+    .chat-middle
+      %ul.post
+        %li.poster-name
+          aoki
+        %li.time
+          2018/02/11 17:01
+        %li.post-content
+          just do it
+      %ul.post
+        %li.poster-name
+          aoki
+        %li.time
+          2018/02/11 17:01
+        %li.post-content
+          just do it
+      %ul.post
+        %li.poster-name
+          aoki
+        %li.time
+          2018/02/11 17:01
+        %li.post-content
+          just do it
+    .chat-lower
+      %form{}
+        %input{:placeholder => "type a message"}
+        %submit
+          Send
