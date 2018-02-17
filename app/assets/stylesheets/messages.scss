@@ -1,15 +1,16 @@
 .wrapper {
   height: 100%;
-  color: white;
 
   .create-message {
-    background-color: #38AEF0;
+    background-color: $skyblueColorf;
     text-align: center;
+    color: #fff;
   }
 
   .side-bar {
     width: 300px;
     height: 100%;
+    color: #fff;
     float: left;
 
     .header {
@@ -80,8 +81,8 @@
         }
       }
       .right-header {
-        border: 1px solid #38AEF0;
-        color: #38AEF0;
+        border: 1px solid $skyblueColor;
+        color: $skyblueColor;
         float: right;
         height: 40px;
         line-height: 40px;
@@ -90,53 +91,76 @@
       }
     }
 
-    &-middle {
-      clear: both;
-      height: calc(100vh - 96px - 90px);
-      background-color: #e8ecf2;
-      padding: 0 40px;
-      .post {
-        padding-top: 46px;
-        .poster-name {
-          float: left;
-          color: #434A54;
-          font-size: 16px;
-          font-weight: bold;
+    .messages {
+      background-color: #FAFAFA;
+      box-sizing: border-box;
+      height: calc(100vh - 100px - 90px);
+      padding: 46px 40px 0;
+      overflow: scroll;
+      .message {
+        margin-bottom: 40px;
+        .upper-message {
+          &__user-name {
+            display: inline-block;
+            color: #434a54;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__date {
+            display: inline-block;
+            color: #999;
+            font-size: 12px;
+            padding-left: 10px;
+          }
         }
-        .time {
-          float: left;
-          margin-left: 10px;
-          font-size: 12px;
-          color: #999999;
-        }
-        .post-content {
-          clear: both;
-          padding-top: 10px;
-          padding-bottom: 40px;
-          color: #434A54;
-          font-size: 14px;
-          font-weight: bold;
+        .lower-message {
+          margin-top: 10px;
+          &__content {
+            color: #434a54;
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
         }
       }
     }
-    &-lower {
-      background-color: #d6d7d8;
-      height: 90px;
-      & form {
-        padding: 0 40px;
-        & input {
-          height: 50px;
-          margin: 20px 0;
-          padding-left: 10px;
-        }
-        & submit {
-          background-color: #38AEF0;
-          height: 50px;
-          margin-left: 15px;
-        }
-      }
 
+    .form {
+      background-color: #DDDDDD;
+      box-sizing: border-box;
+      height: 90px;
+      padding: 20px 50px 20px 40px;
+      &__message {
+        border: none;
+        box-sizing: border-box;
+        float: left;
+        height: 50px;
+        padding: 0 10px;
+        width: calc(100% - 150px);
+      }
+      &__mask {
+        background-color: #fff;
+        float: left;
+        height: 50px;
+        padding-right: 10px;
+        &__image {
+          font-size: 20px;
+          line-height: 50px;
+        }
+      }
+      &__submit {
+        background-color: $skyblueColor;
+        width: 40px;
+        border: none;
+        color: #fff;
+        float: right;
+        font-size: 16px;
+        height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
+        text-align: center;
+      }
     }
+
   }
 
 }

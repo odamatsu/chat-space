@@ -34,30 +34,21 @@
       .right-header
         %a.right-header__button
           Edit
-    .chat-middle
-      %ul.post
-        %li.poster-name
-          aoki
-        %li.time
-          2018/02/11 17:01
-        %li.post-content
-          just do it
-      %ul.post
-        %li.poster-name
-          aoki
-        %li.time
-          2018/02/11 17:01
-        %li.post-content
-          just do it
-      %ul.post
-        %li.poster-name
-          aoki
-        %li.time
-          2018/02/11 17:01
-        %li.post-content
-          just do it
-    .chat-lower
-      %form{}
-        %input{:placeholder => "type a message"}
-        %submit
-          Send
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            aoki
+          .upper-message__date
+            2018/02/11 17:01
+        .lower-message
+          %p.lower-message__content
+            just do it
+
+
+    %form.form
+      %input.form__message{:placeholder => "type a message"}
+      .form__mask
+        %label.form__mask__image
+          %i.fa.fa-image.icon
+      %input.form__submit{:value => "Send"}
