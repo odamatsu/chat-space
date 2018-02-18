@@ -145,11 +145,13 @@
         &__image {
           font-size: 20px;
           line-height: 50px;
+          .hidden {
+            display: none;
+          }
         }
       }
       &__submit {
         background-color: $skyblueColor;
-        width: 40px;
         border: none;
         color: #fff;
         float: right;
@@ -157,7 +159,6 @@
         height: 50px;
         margin-left: 15px;
         padding: 0 30px;
-        text-align: center;
       }
     }
 

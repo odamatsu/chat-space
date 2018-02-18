@@ -7,10 +7,10 @@
         never-stop
       %ul.header__lists
         %li.list
-          %a{href: '/'}
+          = link_to '/' do
             %i.fa.fa-edit.icon
         %li.list
-          %a{href: '/'}
+          = link_to '/' do
             %i.fa.fa-cog.icon
     .groups
       .group
@@ -45,4 +45,5 @@
       .form__mask
         %label.form__mask__image
           %i.fa.fa-image.icon
-      %input.form__submit{value: "Send"}
+          %input.hidden{type: "file"}
+      %input.form__submit{type: "submit", value: "Send"}
