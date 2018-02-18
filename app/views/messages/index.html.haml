@@ -1,18 +1,16 @@
 .wrapper
-
   %p.create-message
     チャットグループが作成されました。
-
   .side-bar
     .header
       %h3.header__name
         never-stop
       %ul.header__lists
         %li.list
-          %a{:href => '/'}
+          %a{href: '/'}
             %i.fa.fa-edit.icon
         %li.list
-          %a{:href => '/'}
+          %a{href: '/'}
             %i.fa.fa-cog.icon
     .groups
       .group
@@ -20,8 +18,6 @@
           Politics
         .group__message
           persistent
-
-
   .chat
     .header
       .left-header
@@ -44,11 +40,9 @@
         .lower-message
           %p.lower-message__content
             just do it
-
-
     %form.form
-      %input.form__message{:placeholder => "type a message"}
+      %input.form__message{placeholder: "type a message"}
       .form__mask
         %label.form__mask__image
           %i.fa.fa-image.icon
-      %input.form__submit{:value => "Send"}
+      %input.form__submit{value: "Send"}
