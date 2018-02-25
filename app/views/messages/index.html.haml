@@ -1,17 +1,17 @@
 .wrapper
-  %p.create-message
-    チャットグループが作成されました。
   .side-bar
     .header
       %h3.header__name
-        never-stop
+        = current_user.name
       %ul.header__lists
         %li.list
-          = link_to '/' do
-            %i.fa.fa-edit.icon
+          = link_to do
+            -# %i.fa.fa-edit.icon
+            = fa_icon 'pencil-square-o', class: 'icon'
         %li.list
-          = link_to '/' do
-            %i.fa.fa-cog.icon
+          = link_to edit_user_path(current_user) do
+            -# %i.fa.fa-cog.icon
+            = fa_icon 'cog', class: 'icon'
     .groups
       .group
         .group__name
