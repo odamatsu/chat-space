@@ -1,23 +1,5 @@
 .wrapper
-  .side-bar
-    .header
-      %h3.header__name
-        = current_user.name
-      %ul.header__lists
-        %li.list
-          = link_to new_group_path do
-            -# %i.fa.fa-edit.icon
-            = fa_icon 'pencil-square-o', class: 'icon'
-        %li.list
-          = link_to edit_user_path(current_user) do
-            -# %i.fa.fa-cog.icon
-            = fa_icon 'cog', class: 'icon'
-    .groups
-      .group
-        .group__name
-          Politics
-        .group__message
-          persistent
+  = render partial: "shared/side_bar"
   .chat
     .header
       .left-header
