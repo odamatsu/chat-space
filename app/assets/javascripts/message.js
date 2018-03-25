@@ -1,5 +1,4 @@
 $(function() {
-
   function buildHTML(message){
     var html = ` <div class="message">
                   <div class="upper-message">
@@ -14,18 +13,12 @@ $(function() {
                   <p class="lower-message__content">
                     ${message.content}
                   </p>
-
                   </div>
                 </div>`;
     return html;
   }
-
   $("#new_message").on('submit', function(e) {
     e.preventDefault();
-
-    //連続送信可能にする
-    // $('.form__submit').removeAttr('data-disable-with');
-
     var formData = new FormData(this);
     var url = $('this').attr('action')
     $.ajax({
@@ -45,8 +38,7 @@ $(function() {
     .fail(function(){
       alert('error');
     })
-    //連続送信可能にする
-    return false
+    return false;
   })
 
 });
