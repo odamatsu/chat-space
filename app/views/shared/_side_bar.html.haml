@@ -5,15 +5,13 @@
     %ul.header__lists
       %li.list
         = link_to new_group_path do
-          -# %i.fa.fa-edit.icon
           = fa_icon 'pencil-square-o', class: 'icon'
       %li.list
         = link_to edit_user_path(current_user) do
-          -# %i.fa.fa-cog.icon
           = fa_icon 'cog', class: 'icon'
   .groups
     - current_user.groups.each do |group|
-      .group
+      .group{ "data-group_id": group.id }
         = link_to group_messages_path(group) do
           .group__name
             = group.name
