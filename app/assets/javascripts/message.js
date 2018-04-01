@@ -33,7 +33,6 @@ $(function() {
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.group[data-group_id =' + data.groupId + '] .group__message').html(data.content);
-      // console.log()
       $('.form__message').val('');
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
