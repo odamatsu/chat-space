@@ -3,7 +3,6 @@ $(document).on('turbolinks:load', function() {
   var search_list = $(".user-search__result");
 
   function appendUser(user) {
-
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.user_name}</p>
                   <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.user_id}" data-user-name="${user.user_name}">追加</a>
@@ -39,8 +38,7 @@ $(document).on('turbolinks:load', function() {
     });
   });
 
-
-  $(".user-search__result").on("click", "a", function() {
+  $(".user-search__result").on("click", "a.chat-group-user__btn--add", function() {
     var id = $(this).attr("data-user-id");
     var name = $(this).attr("data-user-name");
     appendMember(id, name);
@@ -50,7 +48,7 @@ $(document).on('turbolinks:load', function() {
   var member_list = $(".member-add___result");
 
   function appendMember(id, name) {
-    var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+    var html = `<div class='chat-group-user clearfix js-chat-member'>
     <input name='group[user_ids][]' type='hidden' value='${id}'>
     <p class='chat-group-user__name'>${name}</p>
     <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
@@ -58,8 +56,7 @@ $(document).on('turbolinks:load', function() {
     member_list.append(html);
   }
 
-  $(".js-add-user").on("click", "a", function() {
+  $(".js-add-user").on("click", "a.js-remove-btn", function() {
     $(this).parent(".js-chat-member").remove()
   })
-
 });
