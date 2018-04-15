@@ -54,7 +54,7 @@ $(function() {
                       <p class="lower-message__content">${new_message.content}</p>
                     </div>
                   </div>`
-      message_list.append(html)
+      message_list.append(html);
     }
 
     $(function() {
@@ -68,7 +68,7 @@ $(function() {
         var message_id = 0
       }
       $.ajax({
-        url: location.pathname,
+        url: location.href,
         data: {
           message: { id: message_id }
         },
@@ -78,6 +78,7 @@ $(function() {
         $.each(data, function(i, data){
           buildMESSAGE(data);
         });
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       })
     }
 
