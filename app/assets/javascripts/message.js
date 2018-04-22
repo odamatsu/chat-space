@@ -57,9 +57,9 @@ $(function() {
       message_list.append(html);
     }
 
-    $(function() {
-      setInterval(update, 5000);
-    });
+    // $(function() {
+    //   setInterval(update, 5000);
+    // });
 
     function update() {
       if ($('.message')[0]) {
