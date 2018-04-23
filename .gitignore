@@ -18,3 +18,5 @@
 
 * Add
 public/
+
+config/secrets.yml
