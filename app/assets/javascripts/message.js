@@ -1,5 +1,24 @@
 $(function() {
   function buildHTML(message){
+    console.log(message.image_url)
+    if (message.image_url) {
+      var html = ` <div class="message" data-id="${message.id}">
+                    <div class="upper-message">
+                      <div class="upper-message__user-name">
+                        ${message.user_name}
+                      </div>
+                      <div class="upper-message__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <div class="lower-message">
+                      <p class="lower-message__content">
+                      ${message.content}
+                      </p>
+                      <img src="${message.image_url}" >
+                    </div>
+                  </div>`;
+    } else {
     var html = ` <div class="message" data-id="${message.id}">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -10,11 +29,12 @@ $(function() {
                     </div>
                   </div>
                   <div class="lower-message">
-                  <p class="lower-message__content">
+                    <p class="lower-message__content">
                     ${message.content}
-                  </p>
+                    </p>
                   </div>
                 </div>`;
+    }
     return html;
   }
   $("#new_message").on('submit', function(e) {
