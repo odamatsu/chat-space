@@ -77,4 +77,5 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'carrierwave'
 gem 'fog'
+gem 'fog-ovirt', '~> 1.0.3'
 gem 'mini_magick'
