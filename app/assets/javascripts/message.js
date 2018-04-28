@@ -1,6 +1,5 @@
 $(document).on("turbolinks:load",function() {
   function buildHTML(message){
-    console.log(message.image_url)
     if (message.image_url) {
       var html = ` <div class="message" data-id="${message.id}">
                     <div class="upper-message">
@@ -41,6 +40,7 @@ $(document).on("turbolinks:load",function() {
     e.preventDefault();
     var formData = new FormData(this);
     var url = $('this').attr('action')
+    if (formData.get('message[content]') !== ""){
     $.ajax({
       url: url,
       type: 'POST',
@@ -59,6 +59,7 @@ $(document).on("turbolinks:load",function() {
     .fail(function(){
       alert('error');
     });
+  }
     return false;
   });
 
